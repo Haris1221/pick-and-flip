@@ -5,7 +5,7 @@ A game where you have 12 cards and you have to memorize each set of cards. after
 
 wireframe UI:
 
-![alt text](./Wireframe.png) 
+![alt text](./wireframe.png) 
 
 
 Technologies used:
