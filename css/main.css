@@ -29,6 +29,7 @@ h1 {
 .cards {
     transition: transform .5s;
     transform-style: preserve-3d;
+    /* background-color: red; */
     background-image: url("https://images.pexels.com/photos/13962287/pexels-photo-13962287.png?auto=compress&cs=tinysrgb&w=300&lazy=load");
     width: 80px;
     height:110px
@@ -67,5 +68,6 @@ button {
 
 .cards.flip {
     transform: rotateY(180deg);
+    /* background-color: red; */
     background-image: url("https://images.unsplash.com/photo-1682238112660-12139f61ccb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
 }
