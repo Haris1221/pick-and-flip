@@ -47,9 +47,13 @@ h1 {
 }
 
 #timerBox {
+    display: flex;
     width: 70px;
     height: 70px;
     background-color: white;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
 #guessesBox {
