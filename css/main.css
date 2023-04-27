@@ -1,9 +1,7 @@
 body {
-    background: linear-gradient(180deg, #527AB7 0%, rgba(11, 33, 67, 0.689978) 42.19%, rgba(3, 6, 11, 0.682292) 64.58%, rgba(22, 58, 112, 0) 100%);
-border: 1px solid rgba(255, 255, 255, 0.1);
-border-radius: 2px;
-width:100vh;
-height:100vh;
+background-color: lightblue;
+width:500px;
+height:850px;
 display: flex;
 flex-direction: column;
 margin: 0 auto;
@@ -13,6 +11,7 @@ align-items: center;
 
 #cardsDiv {
     border: 2px solid black;
+    width: 650px;
 }
 
 h1 {
@@ -29,7 +28,6 @@ h1 {
 .cards {
     transition: transform .5s;
     transform-style: preserve-3d;
-    /* background-color: red; */
     background-image: url("https://images.pexels.com/photos/13962287/pexels-photo-13962287.png?auto=compress&cs=tinysrgb&w=300&lazy=load");
     width: 80px;
     height:110px
@@ -37,7 +35,6 @@ h1 {
 }
 
 #timerDiv {
-    background-color: lightblue;
     display: flex;
     gap:40px;
     width: 600px;
@@ -65,13 +62,11 @@ button {
     display: flex;
     width: 90px;
     height: 40px;
-    margin-top: 100px;
     justify-content: center;
     align-items: center;
 }
 
 .cards.flip {
     transform: rotateY(180deg);
-    /* background-color: red; */
-    background-image: url("https://images.unsplash.com/photo-1682238112660-12139f61ccb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
+    
 }
