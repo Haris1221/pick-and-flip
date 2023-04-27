@@ -1,67 +1,44 @@
-let cards = document.querySelectorAll('.cards')
-// cards.forEach(card => {
-//     card.style.backgroundImage = "https://images.pexels.com/photos/13962287/pexels-photo-13962287.png?auto=compress&cs=tinysrgb&w=300&lazy=load"
-// })
+let cards = document.querySelectorAll('.ind-cards')
+let backs = document.querySelectorAll('.back')
 
 
-let objects ={
-    "american-football": "url('images/american-football.jpeg')",
-    "baseball": "url('images/baseball.jpeg')",
-    "basketball": "url('images/basketball.jpeg')",
-    "golf" : "url('images/golf.jpeg')",
-    "handball": "url('images/handball.jpeg')",
-    "soccer": "url('images/soccer.jpeg')",
-    "tennis": "url('images/tennis.jpeg')",
-    "volleyball": "url('images/volleyball.jpeg')",
-    "american-football": "url('images/american-football.jpeg')",
-    "baseball": "url('images/baseball.jpeg')",
-    "basketball": "url('images/basketball.jpeg')",
-    "golf": "url('images/golf.jpeg')",
-    "handball": "url('images/handball.jpeg')",
-    "soccer": "url('images/soccer.jpeg')",
-    "tennis": "url('images/tennis.jpeg')",
-    "volleyball": "url('images/volleyball.jpeg')"
-}
-let hasflipped = false
-let firstImage, secondImage
+
+
+let hasflipped = false // to check if the card has been flipped before or not.
+let firstImage, secondImage // the first card and second card clicked.
 let startButton = document.querySelector('#startButton')
-let rightGuesses = 0
-let lockBoard = false 
+let rightGuesses = 0 // keeps track of how many identical cards you got right.
+let lockBoard = false // locks the board so you cant click on any other card when they are not matched.
 
 // this function is going to change the class of the clicked card from 'card' to 'card-flip'.
 function cardFlip (e) {
     if(lockBoard) return;
-    e.preventDefault()
-    this.style.removeProperty('backgroundImage')
     this.classList.add('flip')
-
+    e.preventDefault()
 
     // this checks the first click as to whether it has been clicked before or not
     if(!hasflipped){
         hasflipped = true
         firstImage = this
-        console.log('this is first image inside card flip',firstImage)
     // this checks for the second click
     } else {
         hasflipped = false
         secondImage = this
-        console.log('this is second image inside card flip',secondImage)
-        console.log(objects[firstImage.dataset.cards])
-        console.log(objects[secondImage.dataset.cards])
         cardMatch()
     }
+    
 }
 
 
 function cardMatch() {
-if( secondImage !== undefined){
     if(firstImage.dataset.cards === secondImage.dataset.cards){
+        console.log('this is card one',firstImage.dataset.cards)
+        console.log('this is card two',secondImage.dataset.cards)
         // if the two images that were clicked are the same
         twoMatched()
     } else {
         twoUnmatched()
     }
-}
 }
 
 function twoMatched () {
@@ -75,6 +52,8 @@ function twoMatched () {
 
 function twoUnmatched () {
     lockBoard = true
+    console.log('this is card one',firstImage.dataset.cards)
+    console.log('this is card two',secondImage.dataset.cards)
     setTimeout(() => {
         firstImage.classList.remove('flip')
         secondImage.classList.remove('flip')
@@ -83,19 +62,7 @@ function twoUnmatched () {
     
 }
 
-// this loops throgh each individual clickable card and adds a click event listener for the card to flip if it has the 'card-flip' class.
-cards.forEach(card => {
-    card.style.backgroundImage = objects[card.dataset.cards]
-    card.style.backgroundSize = '80px 110px'
-    // if(cards.hasAttribute('.flip')) {
-    //     card.style.backgroundImage = objects[card.dataset.cards]
-    //     card.style.backgroundSize = '80px 110px'
-    // }
-    // let flipped = document.querySelector('.cards.flip')
-    card.addEventListener('click', cardFlip)
-})
-
-
+// timer function was a refernce from a friend in my pod (Habib)
 function startTimer(duration, display) {
 var timer = duration, minutes, seconds;
 setInterval(function () {
@@ -117,6 +84,16 @@ setInterval(function () {
 var oneMinute = 90
 display = document.querySelector('#timerBox');
 
+cards.forEach(card => {
+    card.classList.toggle('flip')
+})    
+
 startButton.addEventListener('click', function() {
+
+// this loops throgh each individual clickable card and adds a click event listener for the card to flip if it has the 'card-flip' class.
+    cards.forEach(card => {
+        card.addEventListener('click', cardFlip)
+        card.classList.toggle('flip')
+    })    
     startTimer(oneMinute, display)
 })
