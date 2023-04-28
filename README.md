@@ -6,6 +6,10 @@ A game where you have 16 cards and you have to memorize each set of cards. after
 wireframe UI:
 
 ![alt text](./wireframe.png) 
+![alt text](./initState) 
+![alt text](./winState) 
+
+
 
 
 Technologies used:
