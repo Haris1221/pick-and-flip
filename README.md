@@ -1,6 +1,6 @@
 Game title: pick and flip
 
-A game where you have 12 cards and you have to memorize each set of cards. after a set amount of time, the cards will be flipped over and you will have to guess where each identical cards are. if you manage to get all identical cards in time, you win, but, if you guess too many times and didnt get the identical cards, you lose.
+A game where you have 16 cards and you have to memorize each set of cards. after a set amount of time, the cards will be flipped over and you will have to guess where each identical cards are. if you manage to get all identical cards in time, you win, but, if you guess too many times and didnt get the identical cards, you lose.
 
 
 wireframe UI:
@@ -34,7 +34,7 @@ User stories:
 
 - each card should be able to update images when the game starts
 
-- out of the 12 cards each 2 will have similar images 
+- out of the 16 cards each 2 will have similar images 
 
 - as the player, i will have a set amount of time to choose all identical cards 
 
