@@ -69,7 +69,6 @@ button {
 
 .ind-cards.flip {
     transform: rotateY(180deg);
-    
 }
 
 img {

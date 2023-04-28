@@ -1,9 +1,5 @@
 let cards = document.querySelectorAll('.ind-cards')
 let backs = document.querySelectorAll('.back')
-
-
-
-
 let hasflipped = false // to check if the card has been flipped before or not.
 let firstImage, secondImage // the first card and second card clicked.
 let startButton = document.querySelector('#startButton')
@@ -11,10 +7,10 @@ let rightGuesses = 0 // keeps track of how many identical cards you got right.
 let lockBoard = false // locks the board so you cant click on any other card when they are not matched.
 
 // this function is going to change the class of the clicked card from 'card' to 'card-flip'.
-function cardFlip (e) {
+function cardFlip () {
     if(lockBoard) return;
     this.classList.add('flip')
-    e.preventDefault()
+    
 
     // this checks the first click as to whether it has been clicked before or not
     if(!hasflipped){
@@ -31,36 +27,24 @@ function cardFlip (e) {
 
 
 function cardMatch() {
-    if(firstImage.dataset.cards === secondImage.dataset.cards){
-        console.log('this is card one',firstImage.dataset.cards)
-        console.log('this is card two',secondImage.dataset.cards)
-        // if the two images that were clicked are the same
-        twoMatched()
-    } else {
-        twoUnmatched()
-    }
-}
-
-function twoMatched () {
+if(firstImage.dataset.cards === secondImage.dataset.cards){
+// if the two images that were clicked are the same
     firstImage.removeEventListener('click', cardFlip)
     secondImage.removeEventListener('click', cardFlip)
-    rightGuesses++
-    if(rightGuesses === 8) {
-        document.querySelector('h1').innerText = 'You Won'
-    }
+rightGuesses++
+if(rightGuesses === 8) {
+    document.querySelector('h1').innerText = 'You Won'
 }
-
-function twoUnmatched () {
+} else {
     lockBoard = true
-    console.log('this is card one',firstImage.dataset.cards)
-    console.log('this is card two',secondImage.dataset.cards)
     setTimeout(() => {
         firstImage.classList.remove('flip')
         secondImage.classList.remove('flip')
         lockBoard = false
     }, 1000);
-    
 }
+}
+
 
 // timer function was a refernce from a friend in my pod (Habib)
 function startTimer(duration, display) {
