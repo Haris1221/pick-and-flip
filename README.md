@@ -13,6 +13,10 @@ HTML
 CSS
 JavaScript
 
+getting started :
+[Click to play Pick And Flip!]
+https://haris1221.github.io/pick-and-flip/
+
 User stories:
 - i want to have a single player to play the game.
 
